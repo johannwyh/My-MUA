@@ -1,0 +1,130 @@
+run [print :pi]
+make "a 2
+make "a (:a+3)
+print :a
+make "f [
+	[a]
+	[output (:a*:a)]
+]
+print f 2
+print (f 2 * 4)
+print (2*(2+3)/4)
+print sentence [a] "b
+print sentence [a [a b]] [c]
+print sentence "a "b
+print list "a [b]
+print list [a] [b]
+print list [a] "b
+print join [a] "b
+print join [a] [b]
+print join [a [b]] [c]
+print first [a b c]
+print first [[a] b c]
+print first [[a b] b c]
+print first [[a [b]] c]
+print first "abc
+print first 123
+print first true
+print butfirst [a [a b]]
+print butfirst [a [a b] c]
+print butfirst [a b c]
+print butfirst [a [ a b] [c]]
+print butfirst "abcd
+print butlast [a [b c]]
+print butlast [a b c]
+print butlast [a b [c d] e]
+make "length
+[
+	[x]
+	[
+		if isempty :x
+			[output 0]
+			[output add length butfirst :x 1]
+	]
+]
+print length [1 [2 3] 4]
+print join [] [2 3]
+make "reverse [
+    [x]
+    [
+        if isempty :x
+            [output :x]
+            [
+                if islist :x
+                    [output join reverse butfirst :x first :x]
+                    [output word reverse butfirst :x first :x]
+            ]
+    ]
+]
+print reverse [1 2 3]
+print reverse [1 [2 3] 4]
+make "find [
+    [lst x]
+    [
+        if isempty :lst
+            [output false]
+            [
+                if eq first :lst :x
+                    [output true]
+                    [output find butfirst :lst :x]
+            ]
+    ]
+]
+print find [1 2 3] 2
+print find [1 2 3] 4
+print find [1 [2 3] 4] 2
+make "index [
+    [lst x]
+    [
+        if isempty :lst
+            [output -1]
+            [
+                if eq first :lst :x
+                    [output 0]
+                    [
+                        make "i index butfirst :lst :x
+                        if eq :i -1
+                            [output -1]
+                            [output add :i 1]
+                    ]
+            ]
+    ]
+]
+print index [1 2 3] 2
+print index [1 [2 3] 4] 2
+make "f
+[
+	[]
+	[print "a]
+]
+f
+make "f [[][]]
+f
+save "a.mua
+erall
+print isname "f
+load "a.mua
+print isname "f
+make "a 1
+repeat 4 [make "a (:a+1)]
+print :a
+make "n 5
+make "factorial [
+	[n]
+	[
+		if lt :n 2
+			[output 1]
+			[output (:n * factorial (:n-1))]
+	]
+]
+print factorial :n
+print :n
+make "gcd [
+    [a b]
+    [
+        if eq :b 0
+            [output :a]
+            [output gcd :b (:a % :b)]
+    ]
+]
+print gcd 18 12

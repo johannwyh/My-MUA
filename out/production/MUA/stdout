@@ -1,0 +1,45 @@
+number,3.14159,1,run and pi
+number,5,1,2+3
+number,4,1,f 2
+number,16,1,(f 2 * 4)
+number,2.5,1,(2*(2+3)/4)
+word,a b,1,sentence [a] b
+word,a [a b] c,1,print sentence [a [a b]] [c]
+word,a b,1,print sentence "a "b
+word,a [b],1,print list "a [b]
+word,[a] [b],1,print list [a] [b]
+word,[a] b,1,print list [a] "b
+word,a b,1,print join [a] "b
+word,a [b],1,print join [a] [b]
+word,a [b] [c],1,print join [a [b]] [c]
+word,a,1,print first [a b c]
+word,a,1,print first [[a] b c]
+word,a b,1,print first [[a b] b c]
+word,a [b],1,print first [[a [b]] c]
+word,a,1,print first "abc
+word,1,1,print first 123
+word,t,1,print first true
+word,[a b],1,print butfirst [a [a b]]
+word,[a b] c,1,print butfirst [a [a b] c]
+word,b c,1,print butfirst [a b c]
+word,[ a b] [c],1,print butfirst [a [ a b] [c]]
+word,bcd,1,print butfirst "abcd
+word,a,1,print butlast [a [b c]]
+word,a b,1,print butlast [a b c]
+word,a b [c d],1,print butlast [a b [c d] e]
+number,3,1,print length [1 [2 3] 4]
+word,[2 3],1,print join [] [2 3]
+word,3 2 1,1,print reverse [1 2 3]
+word,4 [2 3] 1,1,print reverse [1 [2 3] 4]
+word,true,1,print find [1 2 3] 2
+word,false,1,print find [1 2 3] 4
+word,false,1,print find [1 [2 3] 4] 2
+number,1,1,print index [1 2 3] 2
+number,-1,1,print index [1 [2 3] 4] 2
+word,a,1,f
+word,false,1,print isname "f
+word,true,1,print isname "f
+number,5,1,print :a
+number,120,1,print factorial :n
+number,5,1,print :n
+number,6,1,print gcd 18 12

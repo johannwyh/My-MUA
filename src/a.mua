@@ -1,0 +1,7 @@
+make "a 5.0
+make "f [[] []]
+make "find [[lst x] [if isempty :lst [output false] [if eq first :lst :x [output true] [output find butfirst :lst :x]]]]
+make "length [[x] [if isempty :x [output 0] [output add length butfirst :x 1]]]
+make "pi 3.14159
+make "index [[lst x] [if isempty :lst [output -1] [if eq first :lst :x [output 0] [make "i index butfirst :lst :x if eq :i -1 [output -1] [output add :i 1]]]]]
+make "reverse [[x] [if isempty :x [output :x] [if islist :x [output join reverse butfirst :x first :x] [output word reverse butfirst :x first :x]]]]

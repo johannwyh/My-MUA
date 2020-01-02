@@ -1,0 +1,46 @@
+run and pi: PASS
+2+3: PASS
+f 2: PASS
+(f 2 * 4): PASS
+(2*(2+3)/4): PASS
+sentence [a] b: PASS
+print sentence [a [a b]] [c]: PASS
+print sentence "a "b: PASS
+print list "a [b]: PASS
+print list [a] [b]: PASS
+print list [a] "b: PASS
+print join [a] "b: PASS
+print join [a] [b]: PASS
+print join [a [b]] [c]: PASS
+print first [a b c]: PASS
+print first [[a] b c]: PASS
+print first [[a b] b c]: PASS
+print first [[a [b]] c]: PASS
+print first "abc: PASS
+print first 123: PASS
+print first true: PASS
+print butfirst [a [a b]]: PASS
+print butfirst [a [a b] c]: PASS
+print butfirst [a b c]: PASS
+print butfirst [a [ a b] [c]]: FAIL###[a b] [c]:WORD,[ a b] [c],1,print butfirst [a [ a b] [c]]###
+print butfirst "abcd: PASS
+print butlast [a [b c]]: PASS
+print butlast [a b c]: PASS
+print butlast [a b [c d] e]: PASS
+print length [1 [2 3] 4]: PASS
+print join [] [2 3]: PASS
+print reverse [1 2 3]: PASS
+print reverse [1 [2 3] 4]: PASS
+print find [1 2 3] 2: PASS
+print find [1 2 3] 4: PASS
+print find [1 [2 3] 4] 2: PASS
+print index [1 2 3] 2: PASS
+print index [1 [2 3] 4] 2: PASS
+f: PASS
+print isname "f: PASS
+print isname "f: PASS
+print :a: PASS
+print factorial :n: PASS
+print :n: PASS
+print gcd 18 12: PASS
+44
